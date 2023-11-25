@@ -14,6 +14,12 @@ function AddFromStorage(task){
     console.log(task);
     let list = document.getElementById("list");
 
+    let BTNdelete = document.createElement("button");
+    BTNdelete.textContent = "Eliminar";
+    BTNdelete.classList.add("btn", "btn-danger");
+    BTNdelete.onclick(function(){
+        list.removeChild("li");
+    })
     let li = document.createElement("li");
     li.innerHTML = task.text;
     if(task.complete){
@@ -27,6 +33,7 @@ function AddFromStorage(task){
             task.complete = true;
         }
     }
+    li.appendChild(BTNdelete);
     list.appendChild(li);
 }
  
