@@ -17,9 +17,9 @@ function AddFromStorage(task){
     let BTNdelete = document.createElement("button");
     BTNdelete.textContent = "Eliminar";
     BTNdelete.classList.add("btn", "btn-danger");
-    BTNdelete.onclick(function(){
+    BTNdelete.onclick = function(){
         list.removeChild("li");
-    })
+    };
     let li = document.createElement("li");
     li.innerHTML = task.text;
     if(task.complete){
@@ -57,6 +57,12 @@ function AddTask(){
 
         let li = document.createElement("li");
 
+        let BTNdelete = document.createElement("button");
+        BTNdelete.textContent = "Eliminar";
+        BTNdelete.classList.add("btn", "btn-danger");
+        BTNdelete.onclick = function(){
+        list.removeChild("li");
+        };
 
         li.innerHTML = task.text;
         li.onclick = function(){
@@ -67,7 +73,8 @@ function AddTask(){
                 tareas[task.id].complete = false;
             }
             console.log(tareas);
-        }
+        };
+        li.appendChild(BTNdelete);
         list.appendChild(li);
 
         document.getElementById("task").value = "";
