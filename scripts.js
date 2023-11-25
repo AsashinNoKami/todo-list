@@ -18,7 +18,7 @@ function AddFromStorage(task){
     BTNdelete.textContent = "Eliminar";
     BTNdelete.classList.add("btn", "btn-danger");
     BTNdelete.onclick = function(){
-        list.removeChild("li");
+        list.removeChild(li);
     };
     let li = document.createElement("li");
     li.innerHTML = task.text;
@@ -61,7 +61,7 @@ function AddTask(){
         BTNdelete.textContent = "Eliminar";
         BTNdelete.classList.add("btn", "btn-danger");
         BTNdelete.onclick = function(){
-        list.removeChild("li");
+        list.removeChild(li);
         };
 
         li.innerHTML = task.text;
